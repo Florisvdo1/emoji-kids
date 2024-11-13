@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emoji Day Planner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include the CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div id="header-time-container">
+            <div class="header-left">
+                <span id="live-time">--:--:--</span>
+            </div>
+            <div class="header-center">
+                <!-- Emoji Day Planner Logo Component -->
+                <div class="emoji-planner-header">
+                    <div class="emoji-word">Emoji</div>
+                    <div class="day-word">Day</div>
+                    <div class="planner-word">Planner</div>
+                    <div class="emoji-icons">
+                        <span class="emoji-icon">😊</span> <!-- Smiling face -->
+                        <span class="emoji-icon">💜</span> <!-- Purple heart -->
+                        <span class="emoji-icon">✅</span> <!-- Green check mark -->
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <button id="toggle-emoji-deck-button" class="icon-button">
+                    <!-- Inline SVG for gear icon -->
+                    <svg class="icon" viewBox="0 0 512 512">
+                        <path d="M487.4 315.7l-42.6-24.6c2.9-14.2 4.4-28.8 4.4-43.5s-1.5-29.2-4.4-43.5l42.6-24.6c13.1-7.6 17.1-24.4 8.9-37.2l-48-83.1c-8.3-14.4-26.7-19.3-40.9-11.2l-42.9 24.8c-22.6-19.4-48.4-34.2-76.6-43.6V24c0-15.3-12.4-27.7-27.7-27.7h-96c-15.3 0-27.7 12.4-27.7 27.7v49.9c-28.2 9.3-54 24.2-76.6 43.6l-42.9-24.8c-14.2-8.1-32.6-3.2-40.9 11.2l-48 83.1c-8.3 14.4-4.3 31.6 8.9 37.2l42.6 24.6C25.5 218.8 24 233.4 24 248s1.5 29.2 4.4 43.5l-42.6 24.6c-13.1 7.6-17.1 24.4-8.9 37.2l48 83.1c8.3 14.4 26.7 19.3 40.9 11.2l42.9-24.8c22.6 19.4 48.4 34.2 76.6 43.6V488c0 15.3 12.4 27.7 27.7 27.7h96c15.3 0 27.7-12.4 27.7-27.7v-49.9c28.2-9.3 54-24.2 76.6-43.6l42.9 24.8c14.2 8.1 32.6 3.2 40.9-11.2l48-83.1c8.3-14.4 4.3-31.6-8.9-37.2zM256 336c-48.6 0-88-39.4-88-88s39.4-88 88-88 88 39.4 88 88-39.4 88-88 88z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Emoji Deck -->
+    <div id="emoji-deck" class="emoji-deck">
+        <div class="navigation-buttons">
+            <button id="prev-category" class="nav-button">◀️</button>
+            <span id="category-name">Smileys</span>
+            <button id="next-category" class="nav-button">▶️</button>
+        </div>
+        <div class="deck-body">
+            <div id="emoji-grid" class="emoji-grid">
+                <!-- Emojis will be dynamically generated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Sectors Container -->
+        <div class="sectors-container">
+            <!-- Morning Sector -->
+            <div class="sector" id="morning-sector">
+                <div class="sector-header">
+                    <h2>Morning</h2>
+                    <button class="check-button" data-sector="morning">&#x2713;</button>
+                </div>
+                <div class="emoji-placeholders">
+                    <!-- 5 placeholders -->
+                    <div class="emoji-placeholder"></div>
+                    <div class="emoji-placeholder"></div>
+                    <div class="emoji-placeholder"></div>
+                    <div class="emoji-placeholder"></div>
+                    <div class="emoji-placeholder"></div>
+                </div>
+            </div>
+
+            <!-- Midday Sector -->
+            <div class="sector" id="midday-sector">
+                <div class="sector-header">
+                    <h2>Midday</h2>
+                    <button class="check-button" data-sector="midday">&#x2713;</button>
+                </div>
+                <div class="emoji-placeholders">
+                    <!-- 5 placeholders -->
+                    <div class="emoji-placeholder"></div>
+                    <div class="emoji-placeholder"></div>
+                    <div class="emoji-placeholder"></div>
+                    <div class="emoji-placeholder"></div>
+                    <div class="emoji-placeholder"></div>
+                </div>
+            </div>
+
+            <!-- Evening Sector -->
+            <div class="sector" id="evening-sector">
+                <div class="sector-header">
+                    <h2>Evening</h2>
+                    <button class="check-button" data-sector="evening">&#x2713;</button>
+                </div>
+                <div class="emoji-placeholders">
+                    <!-- 5 placeholders -->
+                    <div class="emoji-placeholder"></div>
+                    <div class="emoji-placeholder"></div>
+                    <div class="emoji-placeholder"></div>
+                    <div class="emoji-placeholder"></div>
+                    <div class="emoji-placeholder"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="custom-text-inputs">
+                <input type="text" placeholder="Enter your morning thoughts...">
+                <input type="text" placeholder="Enter your midday thoughts...">
+                <input type="text" placeholder="Enter your evening thoughts...">
+            </div>
+            <div class="day-rating">
+                <span>Rate your day:</span>
+                <div class="rating-buttons">
+                    <button class="rating-button" data-rating="1">👍</button>
+                    <button class="rating-button" data-rating="2">👍</button>
+                    <button class="rating-button" data-rating="3">👍</button>
+                    <button class="rating-button" data-rating="4">👍</button>
+                </div>
+            </div>
+            <button id="reset-button">Reset</button>
+        </footer>
+    </main>
+
+    <!-- Include the JS -->
+    <script src="script.js"></script>
+</body>
+</html>
